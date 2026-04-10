@@ -137,6 +137,12 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+-- Tab Details
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 0
+vim.o.expandtab = false
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -256,11 +262,6 @@ require('lazy').setup({
   -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
   {
     'NMAC427/guess-indent.nvim',
-    opts = {},
-  },
-
-  {
-    'sphamba/smear-cursor.nvim',
     opts = {},
   },
 
@@ -606,7 +607,7 @@ require('lazy').setup({
       --  See `:help lsp-config` for information about keys and how to configure
       ---@type table<string, vim.lsp.Config>
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -822,7 +823,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
 
@@ -941,6 +942,7 @@ require('lazy').setup({
   -- require 'plugins.autopairs',
   require 'plugins.neo-tree',
   require 'plugins.gitsigns',
+  require 'plugins.smear-cursor',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

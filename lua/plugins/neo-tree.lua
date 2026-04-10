@@ -22,6 +22,7 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['E'] = 'expand_all_nodes',
         },
       },
     },
